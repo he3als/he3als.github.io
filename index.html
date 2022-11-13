@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="My personal website, where you can find out a bit about me (he3als) and what I do! I mainly attempt to improve Windows by tweaking it for performance and QoL.">
+    <meta name="keywords" content="Windows, Tweaking, he3als">
+    <meta name="author" content="he3als">
+    <!-- Embed for Discord and other applications -->
+    <meta content="he3als' website" property="og:title" />
+    <meta content="My personal website, where you can find out a bit about me (he3als) and what I do! I mainly attempt to improve Windows by tweaking it for performance and QoL. :)" property="og:description" />
+    <meta content="https://he3als.neocities.org/" property="og:url" />
+    <meta content="https://he3als.neocities.org/he3als.png" property="og:image" />
+    <meta content="#e9bc80" data-react-helmet="true" name="theme-color" />
+    <!-- Make the website display correctly -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>he3als' website</title>
+    <!-- Favicon -->
+    <link rel="icon" href="/he3als.png">
+    <!-- Load CSS -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+    <input type="checkbox" id="hiddenThemeToggle">
+    <div id="page-wrapper">
+      <div class="maindiv">
+        <header>
+          <h1 class="header-desktop">Welcome to my website! &#128075;</h1>
+          <h1 class="header-mobile">Welcome! &#128075;</h1>
+        </header>
+        <hr class="rounded">
+        <div class="optionalimage">
+          <figure class="duckfigure">
+            <img class="duck" src="/he3als.png" alt="My profile picture (he3als)">
+            <figcaption>me (he3als) 🦆 ⬆️</figcaption>
+          </figure>
+        </div>
+        <main>
+          <h2>Projects I am working on:</h2>
+          <ul>
+            <li><a href="https://github.com/duckISO/duckISO">duckISO:</a> Windows mod for QoL, privacy, performance & longevity. &#x1F986; (&#9888; WIP) </li>
+            <li><a href="https://github.com/he3als/IdleDisabler">IdleDisabler:</a> Toggle processor idle states in Windows. &#9889;</li>
+            <li><a href="https://github.com/he3als/AtlasUpdater">AtlasUpdater:</a> Update AtlasOS' folders &#128194; </li>
+            <li><a href=https://he3als.github.io/ezping>The truth about EzPing (it's a scam)</a>&#10060;</li>
+          </ul>
+          <p class="ducktext">I am interested in programming, operating systems, and gaming. I focus on improving Windows' usability and performance, whilst also improving privacy.</p>
+          <label class="themeToggle" for="hiddenThemeToggle">hi</label>
+          <h2>Contact:</h2>
+          <ul>
+            <li><a href="https://discord.com">Discord:</a> he3als#3932 (701060813506478090)</li>
+            <li><a href="https://github.com/he3als">GitHub:</a> @he3als</li>
+            <li>Email Address: he3als@disroot.org</li>
+          </ul>
+        </main>
+        <footer>
+          <!-- All of the classic theme styled buttons -->
+          <a href="https://librewolf.net/"><img alt="LibreWolf (button)" src="/librewolf.png"></a>
+          <a href=https://en.wikipedia.org/wiki/Computer><img alt="I like computer (button)" src="/ilikecomputer.png"></a> 
+          <a href="https://ezping.nostalgic.land"><img alt="EzPing is a scam! (button)" src="/ezping.png"></a>
+          <a href=https://neocities.org/><img alt="Web design is my passion (NeoCities button)" src="/neo_webdesign.gif"></a>
+        </footer>
+      </div>
+    </div>
+    <script>
+      // This code is only used to remember theme selection between page loads
+      const themeSwitch = document.querySelector('#hiddenThemeToggle');
+      themeSwitch.checked = localStorage.getItem('switchedTheme') === 'true';
+
+      themeSwitch.addEventListener('change', function(e) {
+        if (e.currentTarget.checked === true) {
+          // Add item to localstorage
+          localStorage.setItem('switchedTheme', 'true');
+        } else {
+          // Remove item if theme is switched back to normal
+          localStorage.removeItem('switchedTheme');
+        }
+      });
+    </script>
+  </body>
+</html>
