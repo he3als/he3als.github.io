@@ -4,7 +4,8 @@
   --text: #cdd6f4;
 }
 
-#hiddenThemeToggle { /* Hides the checkbox */
+#hiddenThemeToggle { 
+  /* Hides the checkbox */
   position: absolute !important;
   height: 1px;
   width: 1px;
