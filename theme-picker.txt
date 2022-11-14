@@ -1,0 +1,48 @@
+Currently not used, so I am just dumping the code for it here.
+
+------------------------------------------------------------------------------------
+
+#hiddenThemeToggle { 
+  /* Hides the checkbox */
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+#hiddenThemeToggle:checked ~ #page-wrapper {
+  --bg: var(--bg-test);
+}
+
+.themeToggle {
+  user-select: none;
+}
+
+-------------------------------------------------------------------------------------
+
+    <script>
+      // This code is only used to remember theme selection between page loads
+      const themeSwitch = document.querySelector('#hiddenThemeToggle');
+      themeSwitch.checked = localStorage.getItem('switchedTheme') === 'true';
+
+      themeSwitch.addEventListener('change', function(e) {
+        if (e.currentTarget.checked === true) {
+          // Add item to localstorage
+          localStorage.setItem('switchedTheme', 'true');
+        } else {
+          // Remove item if theme is switched back to normal
+          localStorage.removeItem('switchedTheme');
+        }
+      });
+    </script>
+
+-------------------------------------------------------------------------------------
+
+          <label class="themeToggle" for="hiddenThemeToggle">hi</label>
+
+-------------------------------------------------------------------------------------
+
+    <input type="checkbox" id="hiddenThemeToggle">
+
+-------------------------------------------------------------------------------------

@@ -20,7 +20,6 @@
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
-    <input type="checkbox" id="hiddenThemeToggle">
     <div id="page-wrapper">
       <div class="maindiv">
         <header>
@@ -31,20 +30,22 @@
         <div class="optionalimage">
           <figure class="duckfigure">
             <img class="duck" src="/img/he3als.webp" alt="My profile picture (he3als)">
-            <figcaption>me (he3als) 🦆 ⬆️</figcaption>
+            <figcaption>me (he3als)</figcaption>
           </figure>
         </div>
         <main>
           <h2>Projects I am working on:</h2>
           <ul>
-            <li><a href="https://github.com/duckISO/duckISO">duckISO:</a> Windows modification for QoL, privacy, performance & longevity. &#x1F986; (&#9888; WIP) </li>
-            <li><a href="https://github.com/he3als/IdleDisabler">IdleDisabler:</a> Toggle processor idle states in Windows. &#9889;</li>
+            <li><a href="https://github.com/duckISO/duckISO">duckISO:</a> Windows modification for QoL, privacy, performance & longevity &#x1F986; (&#9888; WIP) </li>
+            <li><a href="https://github.com/he3als/IdleDisabler">IdleDisabler:</a> Toggle processor idle states in Windows &#9889;</li>
             <li><a href="https://github.com/he3als/AtlasUpdater">AtlasUpdater:</a> Update AtlasOS' folders &#128194; </li>
-            <li><a href=https://he3als.github.io/ezping>The truth about EzPing (it's a scam)</a> &#10060;</li>
+          </ul>
+		  <h2>Articles and stuff:</h2>
+          <ul>
+            <li><a href="https://he3als.github.io/ezping">The truth about EzPing (it's a scam)</a> &#10060;</li>
+			<li><a href="https://rentry.co/roblox-performance">Roblox Optimisation Guide</a> &#128296;</li>
           </ul>
           <p>I am interested in programming, operating systems and gaming. I focus on improving Windows' usability and performance, while also improving privacy.</p>
-          <p>This website will potentially have a blog section and more soon, but for now, have this clickable label called 'hi' to change to a crappy light theme.</p>
-          <label class="themeToggle" for="hiddenThemeToggle">hi</label>
           <h2>Contact:</h2>
           <ul>
             <li><a href="https://discord.com">Discord:</a> he3als#3932 (ID:701060813506478090)</li>
@@ -53,20 +54,5 @@
         </main>
       </div>
     </div>
-    <script>
-      // This code is only used to remember theme selection between page loads
-      const themeSwitch = document.querySelector('#hiddenThemeToggle');
-      themeSwitch.checked = localStorage.getItem('switchedTheme') === 'true';
-
-      themeSwitch.addEventListener('change', function(e) {
-        if (e.currentTarget.checked === true) {
-          // Add item to localstorage
-          localStorage.setItem('switchedTheme', 'true');
-        } else {
-          // Remove item if theme is switched back to normal
-          localStorage.removeItem('switchedTheme');
-        }
-      });
-    </script>
   </body>
 </html>
