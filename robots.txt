@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /img/
+Allow: /img/he3als.webp
+Disallow: /other/
