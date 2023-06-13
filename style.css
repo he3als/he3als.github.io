@@ -1,69 +1,5 @@
 :root {
-	/* Regular theme */
-	--bg: #1e1e2e;
-	--text: #cdd6f4;
-	
-	/* Custom theme */
-	--bg-test: #ffffff;
-	
-	 
-	 /* Macchiato */
-	 --ctp-macchiato-rosewater: #f4dbd6;
-	 --ctp-macchiato-flamingo: #f0c6c6;
-	 --ctp-macchiato-pink: #f5bde6;
-	 --ctp-macchiato-mauve: #c6a0f6;
-	 --ctp-macchiato-red: #ed8796;
-	 --ctp-macchiato-maroon: #ee99a0;
-	 --ctp-macchiato-peach: #f5a97f;
-	 --ctp-macchiato-yellow: #eed49f;
-	 --ctp-macchiato-green: #a6da95;
-	 --ctp-macchiato-teal: #8bd5ca;
-	 --ctp-macchiato-sky: #91d7e3;
-	 --ctp-macchiato-sapphire: #7dc4e4;
-	 --ctp-macchiato-blue: #8aadf4;
-	 --ctp-macchiato-lavender: #b7bdf8;
-	 --ctp-macchiato-text: #c5cff5;
-	 --ctp-macchiato-subtext1: #b3bce0;
-	 --ctp-macchiato-subtext0: #a1aacb;
-	 --ctp-macchiato-overlay2: #8f97b7;
-	 --ctp-macchiato-overlay1: #7d84a2;
-	 --ctp-macchiato-overlay0: #6c728d;
-	 --ctp-macchiato-surface2: #5a5f78;
-	 --ctp-macchiato-surface1: #484c64;
-	 --ctp-macchiato-surface0: #363a4f;
-	 --ctp-macchiato-base: #24273a;
-	 --ctp-macchiato-mantle: #1e2030;
-	 --ctp-macchiato-crust: #181926;
-
-	 /* Latte */
-	 --ctp-latte-rosewater: #de9584;
-	 --ctp-latte-flamingo: #dd7878;
-	 --ctp-latte-pink: #ec83d0;
-	 --ctp-latte-mauve: #8839ef;
-	 --ctp-latte-red: #d20f39;
-	 --ctp-latte-maroon: #e64553;
-	 --ctp-latte-peach: #fe640b;
-	 --ctp-latte-yellow: #e49320;
-	 --ctp-latte-green: #40a02b;
-	 --ctp-latte-teal: #179299;
-	 --ctp-latte-sky: #04a5e5;
-	 --ctp-latte-sapphire: #209fb5;
-	 --ctp-latte-blue: #2a6ef5;
-	 --ctp-latte-lavender: #7287fd;
-	 --ctp-latte-text: #4c4f69;
-	 --ctp-latte-subtext1: #5c5f77;
-	 --ctp-latte-subtext0: #6c6f85;
-	 --ctp-latte-overlay2: #7c7f93;
-	 --ctp-latte-overlay1: #8c8fa1;
-	 --ctp-latte-overlay0: #9ca0b0;
-	 --ctp-latte-surface2: #acb0be;
-	 --ctp-latte-surface1: #bcc0cc;
-	 --ctp-latte-surface0: #ccd0da;
-	 --ctp-latte-base: #eff1f5;
-	 --ctp-latte-mantle: #e6e9ef;
-	 --ctp-latte-crust: #dce0e8;
-	 
-	 /* Mocha */
+	 /* Catppuccin Mocha */
 	 --ctp-mocha-rosewater: #f5e0dc;
 	 --ctp-mocha-flamingo: #f2cdcd;
 	 --ctp-mocha-pink: #f5c2e7;
@@ -89,34 +25,6 @@
 	 --ctp-mocha-surface0: #313244;
 	 --ctp-mocha-base: #1e1e2e;
 	 --ctp-mocha-mantle: #181825;
-
-	 /* Frappe */
-	 --ctp-frappe-rosewater: #f2d5cf;
-	 --ctp-frappe-flamingo: #eebebe;
-	 --ctp-frappe-pink: #f4b8e4;
-	 --ctp-frappe-mauve: #ca9ee6;
-	 --ctp-frappe-red: #e78284;
-	 --ctp-frappe-maroon: #ea999c;
-	 --ctp-frappe-peach: #ef9f76;
-	 --ctp-frappe-yellow: #e5c890;
-	 --ctp-frappe-green: #a6d189;
-	 --ctp-frappe-teal: #81c8be;
-	 --ctp-frappe-sky: #99d1db;
-	 --ctp-frappe-sapphire: #85c1dc;
-	 --ctp-frappe-blue: #8caaee;
-	 --ctp-frappe-lavender: #babbf1;
-	 --ctp-frappe-text: #c6ceef;
-	 --ctp-frappe-subtext1: #b5bddc;
-	 --ctp-frappe-subtext0: #a5acc9;
-	 --ctp-frappe-overlay2: #949bb7;
-	 --ctp-frappe-overlay1: #838aa4;
-	 --ctp-frappe-overlay0: #737891;
-	 --ctp-frappe-surface2: #62677e;
-	 --ctp-frappe-surface1: #51566c;
-	 --ctp-frappe-surface0: #414559;
-	 --ctp-frappe-base: #303446;
-	 --ctp-frappe-mantle: #292c3c;
-	 --ctp-frappe-crust: #232634;
 }
 
 .page-wrapper {
@@ -126,7 +34,10 @@
 	align-items: center;
 	background: var(--ctp-mocha-base);
 	color: var(--ctp-mocha-text);
-	/* transition: all 0.3s ease-in-out; */
+    /* background-image: url("img/ctp-pink-mountians.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	transition: all 0.3s ease-in-out; */
 }
 
 body {
@@ -139,7 +50,7 @@ body {
 }
 
 code {
-	background-color: var(--ctp-macchiato-base);
+	background-color: var(--ctp-mocha-surface0);
 	padding: 1px;
 	padding-left: 7px;
 	padding-right: 7px;
@@ -226,10 +137,6 @@ figcaption {
 	min-width: 350px;
 	overflow: auto;
 	margin: 10px;
-/* 	transform: translate(-50%, -50%);
-	top: 50%;
-	position: absolute;
-	left: 50%; */
 }
 
 a:link {
@@ -256,12 +163,10 @@ a:active {
 	float: right;
 }
 
-.header-desktop {
+header {
 	text-align: center;
-}
-
-.header-mobile {
-	text-align: center;
+	line-height: 12px;
+	padding: 9px;
 }
 
 hr {

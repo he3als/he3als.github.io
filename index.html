@@ -2,21 +2,20 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="My personal website where you can find out a bit about me (he3als) and what I do! I mainly attempt to improve Windows by tweaking it for performance and QoL.">
     <meta name="keywords" content="Windows, Tweaking, Coding, he3als">
-    <meta name="author" content="he3als">
+    <meta name="author" content="he3als"> 
     <!-- Embed for Discord and other applications -->
     <meta content="he3als' website" property="og:title" />
     <meta content="My personal website where you can find out a bit about me (he3als) and what I do! I mainly attempt to improve Windows by tweaking it for performance and QoL." property="og:description" />
-    <meta content="https://he3als.github.io/" property="og:url" />
-    <meta content="https://he3als.github.io/img/he3als.webp" property="og:image" />
+    <meta content="https://he3als.xyz" property="og:url" />
+    <meta content="https://he3als.xyz/img/he3als.webp" property="og:image" />
     <meta content="#e9bc80" data-react-helmet="true" name="theme-color" />
-    <!-- Make the website display correctly -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>he3als' website</title>
     <!-- Favicon -->
-    <link rel="icon" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.webp">
     <!-- Load CSS -->
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
 </head>
@@ -27,13 +26,14 @@
             <header>
                 <h1 class="header-desktop">Welcome to my website! <span class="wave">&#128075;</span></h1>
                 <h1 class="header-mobile">Welcome! <span class="wave">&#128075;</span></h1>
+				<a href="https://blog.he3als.xyz">Blog Website</a>
             </header>
             <hr>
             <main>
                 <div class="optionalimage">
                     <figure class="duckfigure">
-						<img class="cat1" src="/img/cat1.webp" alt="stop">
-						<img class="cat" src="/img/cat.webp" alt="wtf man">
+						<img class="cat1" loading="lazy" src="/img/cat1.gif" alt="stop">
+						<img class="cat" loading="lazy" src="/img/cat.gif" alt="wtf man">
 						<img class="duck" onclick="duckClick();" src="/img/he3als.webp" alt="My profile picture (he3als)">
                         <!-- <audio id="duckSound" src="/other/duck.ogg"></audio> -->
                         <figcaption>me (he3als)</figcaption>
@@ -52,7 +52,6 @@
                         <a href="https://github.com/Atlas-OS/Atlas">Atlas OS:</a> A Windows modification, made to optimise performance and increase privacy
                     </li>
                 </ul>
-                <p>Click <a href="https://blog.he3als.xyz">here</a> to go to my blog!</p>
                 <p>I am interested in programming, operating systems and gaming. I focus on improving Windows' usability and performance, while also improving privacy.</p>
                 <h2>Contact</h2>
                 <ul>
@@ -72,8 +71,6 @@
 		var optionalimage = document.querySelector('.optionalimage');
 
 		var clickCount = 0;
-		var startTime = null;
-		var cps = 0;
 		
 		/* prevent zooming in on double tap for mobile/ios */
 		document.addEventListener('dblclick', function(event) {
@@ -81,7 +78,6 @@
 		}, { passive: false });
 		
 		createjs.Sound.registerSound('/other/duck.mp3', 'duck');
-		createjs.Sound.registerSound('/other/boom.mp3', 'boom');
 
 		function duckClick() {
 			clickCount++;
@@ -96,7 +92,8 @@
 				cat1.style.opacity = 1;
 			}
 			if (clickCount === 70) {
-				createjs.Sound.play('boom');
+				var boomSound = new Audio('/other/boom.mp3');
+				boomSound.play();
 				optionalimage.style.display = 'none';
 			}
 			createjs.Sound.play('duck', { volume: 0.1 });
