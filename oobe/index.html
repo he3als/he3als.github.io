@@ -1,0 +1,52 @@
+<html lang="en-GB" dir="ltr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="oobe-light.css" rel="stylesheet" type="text/css" />
+        <title>Windows Setup</title>
+    </head>
+
+    <body>
+        <div class="background-image-container">
+            <svg xmlns="http://www.w3.org/2000/svg" class="SVGBackdropImage">
+                <filter id="background-blur" x="0" y="0" width="1" height="1">
+                    <feGaussianBlur result="blurred" stdDeviation="45"></feGaussianBlur>
+                </filter>
+                <image filter="url(#background-blur)" width="100%" height="100%" href="img0.jpg"></image>
+            </svg>
+        </div>
+        <div class="control-app" id="_defaultRoot" data-bind="component: frameName">
+            <div class="Container intro">
+                <div class="content" id="oobeLightFrameView">
+                    <backstack-chrome-breadcrumb>
+                        <button
+                            class="icon-button icon icon-back"
+                            id="backbutton"
+                            style="/*! display: none; */"
+                            aria-label="Back"
+                            data-bind="visible: showBackButton, click: onBackButtonClick, attr: {'aria-label': resources()['BackButtonAccName']}"
+                        ></button>
+                    </backstack-chrome-breadcrumb>
+                    <div class="graphic halfSection" role="presentation">
+                        <div id="animation">
+                            <img style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);" viewbox="0 0 552 552" preserveaspectratio="xMidYMid meet" width="552" height="552" src="region.svg" />
+                        </div>
+                    </div>
+                    <div class="controls halfSection" id="_view" style="opacity: 1;">
+                        <oobe-light-progress class="app-content" aria-hidden="true" style="/*! display: none; */ /*! opacity: 0; */">
+                            <!-- progress -->
+                            <div class="app-content">
+                                <div class="control-progress" id="_progress" aria-hidden="true" style="display: block;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="radialSize" id="_progressControl" viewBox="0 0 16 16">
+                                        <circle class="radial-bg" cx="8px" cy="8px" r="7px"></circle>
+                                        <circle class="radial radial-infinite" cx="8px" cy="8px" r="7px"></circle>
+                                    </svg>
+                                    <h4 tabindex="0" id="_progressText" aria-hidden="true" aria-live="assertive" style="" data-bind="{text: progressText}" aria-role="alert">Just a moment...</h4>
+                                </div>
+                            </div>
+                        </oobe-light-progress>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
