@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@divriots/jampack": "^0.24.4"
+  }
+}

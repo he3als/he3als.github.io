@@ -1,1 +1,3 @@
-server.py
+node_modules
+.jampack
+dist
