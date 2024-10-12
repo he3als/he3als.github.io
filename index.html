@@ -17,9 +17,10 @@
     <!-- Favicon -->
     <link rel="icon" href="/img/favicon.webp">
     <!-- Load CSS -->
-    <link href="/style.v1.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/style.v2.css" rel="stylesheet" type="text/css" media="all">
 </head>
 
+<!-- i'll rewrite this someday -->
 <body>
     <div class="page-wrapper">
         <div class="maindiv">
@@ -30,37 +31,49 @@
             </header>
             <hr>
             <main>
-                <div class="optionalimage">
-                    <figure class="duckfigure">
-                        <img class="cat1" loading="lazy" src="/img/cat1.gif" alt="stop">
-                        <img class="cat" loading="lazy" src="/img/cat.gif" alt="wtf man">
-                        <img class="duck" onclick="duckClick();" src="/img/he3als.webp" alt="My profile picture (he3als)">
-                        <!-- <audio id="duckSound" src="/other/duck.ogg"></audio> -->
-                        <figcaption>me (he3als)</figcaption>
-                    </figure>
+                <div class="flexWrapper">
+                    <div>
+                        <figure class="duckfigure">
+                            <!-- <img class="cat1" loading="lazy" src="/img/cat1.gif" alt="final warnig.."> -->
+                            <video class="cat1" loading="lazy" src="/img/melon-cat.mp4" alt="final warnig.." autoplay muted playsinline loop></video>
+                            <video class="cat" loading="lazy" src="/img/stare-cat.mp4" alt="stop clicking..." autoplay muted playsinline loop></video>
+                            <img class="duck" onclick="duckClick();" src="/img/he3als.webp" alt="My profile picture (he3als)">
+                            <!-- <audio id="duckSound" src="/other/duck.mp3"></audio> -->
+                            <figcaption>me (he3als)</figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <h2 style="margin-top: 0;">Projects I work on (<a href="https://github.com/he3als">my repos</a>)</h2>
+                        <ul>
+                            <li>
+                                <img src="/img/edgeremover.webp" alt="EdgeRemover Icon" class="emoji">
+                                <a href="https://github.com/he3als/EdgeRemover">EdgeRemover</a>: Easily remove or reinstall Edge on Windows.
+                            </li>
+                        </ul>
+                        <h2>Previous contributions</h2>
+                        <ul>
+                            <li>
+                                <img src="/img/atlas.svg" alt="Atlas Logo" class="emoji">
+                                <a href="https://github.com/Atlas-OS/Atlas">AtlasOS</a>:
+                                An open modification to Windows. I was previously the lead maintainer, for both
+                                <a href="https://github.com/Atlas-OS/docs/graphs/contributors">the documentation</a>
+                                and
+                                <a href="https://github.com/Atlas-OS/Atlas/graphs/contributors">the Playbook.</a>
+                            </li>
+                            <li>
+                                <img src="/img/eclean.webp" alt="eclean Icon" class="emoji">
+                                <a href="https://eclean.gg">eclean</a>: Upcoming Windows maintenance tool.
+                            </li>
+                        </ul>
+                        <h2>About me</h2>
+                        <p>I am interested in programming, operating systems and gaming. Currently exploring new programming languages & areas, but I mostly use PowerShell at the moment. Plus I like ducks and cats. 🦆😸</p>
+                        <h2>Contact</h2>
+                        <ul>
+                            <li>Discord: he3als (ID: <code>701060813506478090</code>)</li>
+                            <li>GitHub: <a href="https://github.com/he3als">@he3als</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <h2>Projects I work on (<a href="https://github.com/he3als">my repos</a>)</h2>
-                <ul>
-                    <li>
-                        <img src="/img/atlas.svg" alt="Atlas Logo" class="emoji">
-                        <a href="https://github.com/Atlas-OS/Atlas">AtlasOS:</a> An open and lightweight modification to Windows, designed to optimize performance, privacy and usability.
-                    </li>
-                    <li>
-                        <img src="/img/edgeremover.webp" alt="EdgeRemover Icon" class="emoji">
-                        <a href="https://github.com/he3als/EdgeRemover">EdgeRemover:</a> Easily remove or reinstall Edge on Windows.
-                    </li>
-                    <li>
-                        <img src="/img/eclean.webp" alt="eclean Icon" class="emoji">
-                        <a href="https://eclean.gg">eclean:</a> Upcoming Windows maintenance tool
-                    </li>
-                </ul>
-                <h2>About me</h2>
-                <p>I am interested in programming, operating systems and gaming. As the co-owner and primary developer of AtlasOS, I focus on improving Windows' usability and privacy. 🦆</p>
-                <h2>Contact</h2>
-                <ul>
-                    <li>Discord: he3als (ID: <code>701060813506478090</code>)</li>
-                    <li>GitHub: <a href="https://github.com/he3als">@he3als</a></li>
-                </ul>
             </main>
         </div>
     </div>
@@ -71,7 +84,7 @@
 		var duck = document.querySelector('.duck');
 		var cat = document.querySelector('.cat');
 		var cat1 = document.querySelector('.cat1');
-		var optionalimage = document.querySelector('.optionalimage');
+		var optionalimage = document.querySelector('.duckfigure');
 
 		var clickCount = 0;
 		
@@ -81,6 +94,7 @@
 		}, { passive: false });
 		
 		createjs.Sound.registerSound('/other/duck.mp3', 'duck');
+		createjs.Sound.registerSound('/other/boom.mp3', 'boom');
 
 		function duckClick() {
 			clickCount++;
@@ -95,8 +109,9 @@
 				cat1.style.opacity = 1;
 			}
 			if (clickCount === 70) {
-				var boomSound = new Audio('/other/boom.mp3');
-				boomSound.play();
+				// var boomSound = new Audio('/other/boom.mp3');
+                createjs.Sound.play('boom', { volume: 0.6 });
+				// boomSound.play();
 				optionalimage.style.display = 'none';
 			}
 			createjs.Sound.play('duck', { volume: 0.1 });
