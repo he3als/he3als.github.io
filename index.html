@@ -77,7 +77,7 @@
             </main>
         </div>
     </div>
-	<script src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
 	<!-- idk why but ios decides not to play the audio if it's in a .js -->
 	<!-- <script src="/js/duck.js"></script> -->
 	<script>
@@ -93,29 +93,38 @@
 			event.preventDefault();
 		}, { passive: false });
 		
-		createjs.Sound.registerSound('/other/duck.mp3', 'duck');
-		createjs.Sound.registerSound('/other/boom.mp3', 'boom');
+        var duckSound = new Howl({
+            src: ['/other/duck.mp3'],
+            volume: 0.1
+        });
 
-		function duckClick() {
-			clickCount++;
-			if (clickCount === 20) {
-				duck.style.opacity = 0;
-				cat.style.display = 'block';
-				cat.style.opacity = 1;
-			}
-			if (clickCount === 40) {
-				cat.style.opacity = 0;
-				cat1.style.display = 'block';
-				cat1.style.opacity = 1;
-			}
-			if (clickCount === 70) {
-				// var boomSound = new Audio('/other/boom.mp3');
-                createjs.Sound.play('boom', { volume: 0.6 });
-				// boomSound.play();
-				optionalimage.style.display = 'none';
-			}
-			createjs.Sound.play('duck', { volume: 0.1 });
-		}
+        var boomSound = new Howl({
+            src: ['/other/boom.mp3'],
+            volume: 0.6
+        });
+
+        function duckClick() {
+            clickCount++;
+            
+            if (clickCount === 20) {
+                duck.style.opacity = 0;
+                cat.style.display = "block";
+                cat.style.opacity = 1;
+            }
+            
+            if (clickCount === 40) {
+                cat.style.opacity = 0;
+                cat1.style.display = "block";
+                cat1.style.opacity = 1;
+            }
+            
+            if (clickCount === 70) {
+                boomSound.play();
+                optionalimage.style.display = "none";
+            }
+            
+            duckSound.play();
+        }
 	</script>
 </body>
 
